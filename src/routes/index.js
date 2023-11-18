@@ -2,7 +2,6 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home';
-import Details from '../screens/Details';
 import HomeP from '../screens/Paciente/Home/index';
 import GetP from '../screens/Paciente/Get';
 import PostP from '../screens/Paciente/Post';

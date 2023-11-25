@@ -3,9 +3,11 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#191970',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#191970',
+    width: '100%',
+    height: '100%',
   },
   imagem: {
     width: '100%',
@@ -31,25 +33,24 @@ const styles = StyleSheet.create({
   text: {
     color: 'white',
     fontWeight: 'bold',
-    width: 150,
     marginLeft: 10,
   },
   input: {
-    flex: 1,
-    height: 40,
-    borderColor: 'gray',
-    borderRadius: 5,
-    paddingLeft: 10,
     color: 'white',
+    marginBottom:10,
+    padding:5,
+    borderRadius:10,
+    borderColor: 'white',
+    borderWidth: 2
   },
   sendButton: {
     backgroundColor: 'green',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 15,
-    borderRadius: 10,
-    margin: 5,
-    width: '30%',
+    borderRadius: 20,
+    marginTop: 10,
+    width: '40%',
   },
   sendButtonText: {
     color: 'white',

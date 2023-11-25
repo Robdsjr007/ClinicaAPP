@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
+import styles from './style';
 import { View, Text, Button, TextInput } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 
-const PostP = () => {
+
+const PostP = ({ navigation }) => {
+  const routes = useRoute();
+  const GetP = () => {
+    navigation.navigate('GetP');
+  };
   const [nome, setNome] = useState('');
   const [telefone, setTelefone] = useState('');
   const [endereco, setEndereco] = useState('');
@@ -10,7 +17,7 @@ const PostP = () => {
 
   const handleAddPaciente = async () => {
     try {
-      const response = await fetch('http://localhost/Teste_Unitario_PHP/server/insert/insert.php', {
+      const response = await fetch('http://etec199-2021-robsondias.atwebpages.com/SW/clinicaPHP/insert/insert.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,6 +43,9 @@ const PostP = () => {
         setEndereco('');
         setRemedio('');
         setDoencas('');
+
+        GetP();
+      
       }
     } catch (error) {
       console.error('Erro ao enviar solicitação para adicionar paciente:', error);
@@ -43,21 +53,21 @@ const PostP = () => {
   };
 
   return (
-    <View>
-      <Text>Nome:</Text>
-      <TextInput value={nome} onChangeText={setNome} />
+    <View style={styles.container}>
+      <Text style={styles.text}>Nome:</Text>
+      <TextInput style={styles.input} value={nome} onChangeText={setNome} />
 
-      <Text>Telefone:</Text>
-      <TextInput value={telefone} onChangeText={setTelefone} />
+      <Text style={styles.text}>Telefone:</Text>
+      <TextInput style={styles.input} value={telefone} onChangeText={setTelefone} />
 
-      <Text>Endereço:</Text>
-      <TextInput value={endereco} onChangeText={setEndereco} />
+      <Text style={styles.text}>Endereço:</Text>
+      <TextInput style={styles.input} value={endereco} onChangeText={setEndereco} />
 
-      <Text>Remédio:</Text>
-      <TextInput value={remedio} onChangeText={setRemedio} />
+      <Text style={styles.text}>Remédio:</Text>
+      <TextInput style={styles.input} value={remedio} onChangeText={setRemedio} />
 
-      <Text>Doenças:</Text>
-      <TextInput value={doencas} onChangeText={setDoencas} />
+      <Text style={styles.text}>Doenças:</Text>
+      <TextInput style={styles.input} value={doencas} onChangeText={setDoencas} />
 
       <Button title="Adicionar Paciente" onPress={handleAddPaciente} />
     </View>

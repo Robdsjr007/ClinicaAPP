@@ -9,7 +9,7 @@ export default function GetP() {
     const fetchData = async () => {
       try {
 
-        const response = await fetch('http://localhost/Teste_Unitario_PHP/server/select/selectPaciente.php', {
+        const response = await fetch('http://etec199-2021-robsondias.atwebpages.com/SW/clinicaPHP/select/selectPaciente.php', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

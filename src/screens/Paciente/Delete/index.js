@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Alert } from 'react-native';
 import styles from './style';
+import { useRoute } from '@react-navigation/native'
 
-export default function DeletePaciente() {
+export default function DeletePaciente({navigation}) {
+  const routes = useRoute();
+  const GetP = () => {
+  navigation.navigate('GetP');
+  };
+
   const [numeroBeneficiario, setNumeroBeneficiario] = useState('');
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost/Teste_Unitario_PHP/server/delete/delete.php?numeroBeneficiario=${numeroBeneficiario}`, {
+      const response = await fetch(`http://etec199-2021-robsondias.atwebpages.com/SW/clinicaPHP/delete/delete.php?numeroBeneficiario=${numeroBeneficiario}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -17,7 +23,7 @@ export default function DeletePaciente() {
       const data = await response.json();
 
       if (response.ok) {
-        Alert.alert('Sucesso', data.mensagem);
+        GetP();
       } else {
         Alert.alert('Erro', data.mensagem);
       }

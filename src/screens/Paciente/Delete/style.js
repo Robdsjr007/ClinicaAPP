@@ -19,6 +19,16 @@ const styles = StyleSheet.create({
 
   },
 
+  input: {
+    color: 'white',
+    marginBottom:10,
+    marginTop:10,
+    padding:5,
+    borderRadius:10,
+    borderColor: 'white',
+    borderWidth: 2
+  },
+
   inputDiv: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -26,13 +36,11 @@ const styles = StyleSheet.create({
 
   },
 
-  Text: {
+  text: {
     color: 'white',
-    marginRight: 10,
     fontWeight: 'bold',
-
+    marginLeft: 10,
   },
-
 
   containerButton: { top: -90 },
 

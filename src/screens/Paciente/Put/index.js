@@ -17,7 +17,7 @@ const PutP = ({ navigation }) => {
 
   const handleUpdate = async () => {
     try {
-      const response = await fetch('http://etec199-2021-robsondias.atwebpages.com/SW/clinicaPHP/update', {
+      const response = await fetch('http://etec199-2021-robsondias.atwebpages.com/SW/clinicaPHP/update/update.php', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

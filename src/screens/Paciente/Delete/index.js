@@ -34,7 +34,7 @@ export default function DeletePaciente({navigation}) {
 
   return (
     <View style={styles.container}>
-      <Text>Excluir Paciente</Text>
+      <Text style={styles.text}>Excluir Paciente</Text>
       <TextInput
         style={styles.input}
         placeholder="Número Beneficiário"
